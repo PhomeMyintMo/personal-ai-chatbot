@@ -23,12 +23,12 @@ export default function ChatInput({
   const isEmpty = value.trim().length === 0;
 
   return (
-    <div className=" p-4">
+    <div className="border-t  p-4">
       <div className="relative">
         <textarea
           className="w-full resize-none rounded-lg border p-2 pr-14 outline-none"
           rows={2}
-          placeholder="Ask me anything..."
+          placeholder="Ask me anything about me..."
           value={value}
           onChange={(e) => onChange(e.target.value)}
           onKeyDown={handleKeyDown}

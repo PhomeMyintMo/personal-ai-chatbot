@@ -80,65 +80,63 @@ export default function Chat() {
         }
 
     }
-    return (
-        <div className="">
-            <div className="mx-auto flex h-screen flex-col max-w-2xl py-4 no-scrollbar">
-                {/* <header className="border-b p-4">
-                <h1 className="text-xl font-bold">
-                    {portfolio.name}'s Assistant AI
-                </h1>
-
-                <p className="text-sm text-gray-500">
-                    Ask anything about me.
-                </p>
-            </header> */}
-                <div className="flex-1 overflow-y-auto space-y-6 p-6">
-                    {
-                        messages.length === 0 ? (
-                            <div className="flex flex-col items-center text-center space-y-6">
-                                <div className="flex gap-2 items-center">
-                                    <Image
-                                        src="/avatar.jpg"
-                                        alt={portfolio.name}
-                                        width={24}
-                                        height={24}
-                                        className="rounded-full border"
-                                    />
-                                    <h2 className="text-2xl font-semibold">
-                                        Hi! I am {portfolio.name}👋
-                                    </h2>
-
-                                </div>
-
-                                <div className="flex flex-wrap justify-center gap-3">
-                                    {portfolio.suggestions.map((question) => (
-                                        <button
-                                            key={question}
-                                            onClick={() => handleSend(question)}
-                                            className="rounded-full border-blue-300 border px-4 py-2  hover:bg-gray-300/50 cursor-pointer transition"
-                                        >
-                                            {question}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-                        ) : (
-                            messages.map((message) => (
-                                <Message key={message.id} message={message} />
-                            ))
-                        )
-
-                    }
-                    {isLoading && <TypingIndicator />}
-                    <div ref={bottomRef} />
-                </div>
-                <ChatInput
-                    value={input}
-                    onChange={setInput}
-                    onSend={handleSend}
-                    isLoading={isLoading}
-                />
+   return (
+  <div className="flex h-screen flex-col">
+    {/* Scrollable messages */}
+    <div className="flex-1 overflow-y-auto">
+      <div className="mx-auto max-w-2xl px-6 py-6">
+        {messages.length === 0 ? (
+          <div className="flex flex-col items-center text-center space-y-6">
+            <div className="flex items-center gap-2">
+              <Image
+                src="/avatar.jpg"
+                alt={portfolio.name}
+                width={24}
+                height={24}
+                className="rounded-full border"
+              />
+              <h2 className="text-2xl font-semibold">
+                Hi! I am {portfolio.name} 👋
+              </h2>
             </div>
-        </div>
-    )
+
+            <div className="flex flex-wrap justify-center gap-3">
+              {portfolio.suggestions.map((question) => (
+                <button
+                  key={question}
+                  onClick={() => handleSend(question)}
+                  className="rounded-full border border-blue-300 px-4 py-2 transition hover:bg-gray-300/50"
+                >
+                  {question}
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <>
+            {messages.map((message) => (
+              <Message key={message.id} message={message} />
+            ))}
+
+            {isLoading && <TypingIndicator />}
+
+            <div ref={bottomRef} />
+          </>
+        )}
+      </div>
+    </div>
+
+    {/* Fixed input */}
+    <div>
+      <div className="mx-auto max-w-2xl p-4">
+        <ChatInput
+          value={input}
+          onChange={setInput}
+          onSend={handleSend}
+          isLoading={isLoading}
+        />
+      </div>
+    </div>
+  </div>
+);
 }

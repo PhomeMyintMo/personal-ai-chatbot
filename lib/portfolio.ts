@@ -59,7 +59,15 @@ export const portfolio = {
   contact: {
     email: "phomemyintmo64@gmail.com",
     github: "https://github.com/phomemyintmo",
-    linkedin: "",
+    linkedin: "https://mm.linkedin.com/in/phome-myint-mo-0409011a8",
+  },
+
+  hobby: {
+    hobbies: "I have many hobbies - drawing, watercolor, swimming, currently I am into playing guitar. After a long hour of coding, I just grab the guitar and practice. which is fascinating."
+  },
+
+  whatIRead: {
+    whatIRead: "Mostly, I spend my time in reading psycological articles, blogs which help me understand emotions in different ways and seeing world from different perspectives. And I also read tech related articles about trending, AI, frontend, and design."
   },
   suggestions: [
           "Tell me about yourself",
@@ -94,6 +102,8 @@ Unless the user specifically asks for a list, comparison, or step-by-step explan
 - do not use bullet points
 - do not use numbered lists
 - do not overuse bold text
+
+if they ask my contacts, show the contact with bold text, if it is link, show them as link
 
 Prefer short paragraphs and conversational sentences.
 
