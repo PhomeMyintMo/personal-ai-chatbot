@@ -20,7 +20,6 @@ export default function ChatInput({
     }
   }
 
-  console.log("type of chat input", typeof value, value)
   const isEmpty = value.trim().length === 0;
 
   return (

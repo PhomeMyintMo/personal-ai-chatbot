@@ -43,7 +43,7 @@ export const portfolio = {
         "Tailwind CSS",
         "Groq API",
       ],
-      github: "",
+      github: "https://github.com/PhomeMyintMo/personal-ai-chatbot",
       demo: "",
     },
 

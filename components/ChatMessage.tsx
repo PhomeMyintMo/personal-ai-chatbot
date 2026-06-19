@@ -15,10 +15,10 @@ export default function Message({ message }: MessageProps) {
       {!isUser && <AssistantProfile createdAt={message.createdAt} />}
 
       <div className={`max-w-[75%] rounded-2xl px-4 py-3 mb-2 ${isUser
-        ? "bg-blue-600 text-white"
+        ? "bg-foreground/20"
         : message.isError ?
         "bg-red-100/10 text-red-500 "
-        : "bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-white"
+        : "bg-foreground/20"
         }`}>
         <article className="prose prose-sm dark:prose-invert max-w-none">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
