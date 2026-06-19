@@ -1,6 +1,10 @@
 export const portfolio = {
   name: "Phome Myint Mo",
 
+  gender: "Female",
+
+  age: "24 years old",
+
   role: "Frontend Developer",
 
   location: "Yangon, Myanmar",
@@ -27,7 +31,7 @@ export const portfolio = {
 
   education: [
     {
-      school: "University of Computer Studies, Keng Tong",
+      school: "University of Computer Studies, Kyaing Tong",
       degree: "Bachelor of Computer Science",
     },
   ],
@@ -48,11 +52,17 @@ export const portfolio = {
     },
 
     {
-      name: "Todo App",
-      description: "A CRUD todo application.",
-      tech: ["React", "Tailwind"],
+      name: "E-commerce website",
+      description: "A full-stack e-commerce application featuring separate customer and admin interfaces. Customers can browse products, add items to their cart, save favorites, and place orders(I have not done the checkout process). The admin dashboard provides complete inventory management with CRUD operations for products and categories.",
+      tech: ["React", "Tailwind CSS", "Shadcn", "Node.js", "PostgreSQL", "Imagekit", "Framer Motion"],
       github: "",
       demo: "",
+    },
+
+    {
+      name: "Content Management Portal",
+      description: "This is developed for my current company  to let users with specific role to manage their contents (CRUD), and view the analysis of how much sales they had made.",
+      tech: ["React", "Firebase", "Tailwind CSS", "Shadcn", "Redux" ]
     },
   ],
 

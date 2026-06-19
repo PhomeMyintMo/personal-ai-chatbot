@@ -116,7 +116,7 @@ export default function Chat() {
   }
 
   return (
-    <div className="flex h-screen flex-col ">
+    <div className="flex min-h-dvh flex-col ">
       {/* Scrollable messages */}
       <div className="flex-1 overflow-y-auto p-8 sm:p-6">
         <div className="mx-auto max-w-2xl ">
@@ -131,10 +131,10 @@ export default function Chat() {
                 className="rounded-full border"
               /> */}
                 <div className="flex flex-col gap-2 text-left">
-                  <h2 className="text-xl font-semibold">
+                  <h2 className="text-lg sm:text-xl font-semibold">
                     Hi! I am {portfolio.name}
                   </h2>
-                  <p className="text-lg">Ask me anything.</p>
+                  <p className="text-md sm:text-lg">Ask me anything.</p>
                 </div>
               </div>
 
