@@ -27,6 +27,9 @@ export async function POST(req: Request) {
       ],
     });
 
+    console.log("message", chatMessages)
+    console.log("response", response)
+
     return NextResponse.json({
       message: response.choices[0].message.content,
     });

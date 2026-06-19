@@ -25,6 +25,7 @@ export default function Chat() {
     async function handleSend(text?: string) {
         try {
             const messageText = text ?? input;
+            console.log("type of message", typeof messageText, messageText)
             if (!messageText.trim()) return;
             setIsLoading(true);
             const userMessage = {
@@ -81,31 +82,34 @@ export default function Chat() {
 
     }
    return (
-  <div className="flex h-screen flex-col">
+  <div className="flex h-screen flex-col p-8 sm:p-6">
     {/* Scrollable messages */}
     <div className="flex-1 overflow-y-auto">
-      <div className="mx-auto max-w-2xl px-6 py-6">
+      <div className="mx-auto max-w-2xl ">
         {messages.length === 0 ? (
-          <div className="flex flex-col items-center text-center space-y-6">
-            <div className="flex items-center gap-2">
-              <Image
+          <div className="flex flex-col items-left text-center space-y-6">
+            <div className="flex gap-2">
+              {/* <Image
                 src="/avatar.jpg"
                 alt={portfolio.name}
                 width={24}
                 height={24}
                 className="rounded-full border"
-              />
-              <h2 className="text-2xl font-semibold">
-                Hi! I am {portfolio.name} 👋
+              /> */}
+              <div className="flex flex-col gap-2 text-left">
+              <h2 className="text-xl font-semibold">
+                Hi! I am {portfolio.name}
               </h2>
+              <p className="text-lg">Ask me anything.</p>
+              </div>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap gap-3">
               {portfolio.suggestions.map((question) => (
                 <button
                   key={question}
                   onClick={() => handleSend(question)}
-                  className="rounded-full border border-blue-300 px-4 py-2 transition hover:bg-gray-300/50"
+                  className="rounded-full border text-sm border-blue-300 px-4 py-2 transition hover:bg-gray-300/50"
                 >
                   {question}
                 </button>

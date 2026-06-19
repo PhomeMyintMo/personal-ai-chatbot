@@ -13,21 +13,22 @@ export default function ChatInput({
   onSend,
   isLoading,
 }: ChatInputProps) {
-  function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
+  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       onSend();
     }
   }
 
+  console.log("type of chat input", typeof value, value)
   const isEmpty = value.trim().length === 0;
 
   return (
     <div className="border-t  p-4">
       <div className="relative">
-        <textarea
+        <input
+          type="text"
           className="w-full resize-none rounded-lg border p-2 pr-14 outline-none"
-          rows={2}
           placeholder="Ask me anything about me..."
           value={value}
           onChange={(e) => onChange(e.target.value)}
