@@ -82,9 +82,9 @@ export default function Chat() {
 
     }
    return (
-  <div className="flex h-screen flex-col p-8 sm:p-6">
+  <div className="flex h-screen flex-col ">
     {/* Scrollable messages */}
-    <div className="flex-1 overflow-y-auto">
+    <div className="flex-1 overflow-y-auto p-8 sm:p-6">
       <div className="mx-auto max-w-2xl ">
         {messages.length === 0 ? (
           <div className="flex flex-col items-left text-center space-y-6">

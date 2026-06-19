@@ -13,7 +13,7 @@ export default function ChatInput({
   onSend,
   isLoading,
 }: ChatInputProps) {
-  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+  function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       onSend();
@@ -26,8 +26,8 @@ export default function ChatInput({
   return (
     <div className="border-t  p-4">
       <div className="relative">
-        <input
-          type="text"
+        <textarea
+          rows={2}
           className="w-full resize-none rounded-lg border p-2 pr-14 outline-none"
           placeholder="Ask me anything about me..."
           value={value}
@@ -38,7 +38,7 @@ export default function ChatInput({
 
         <button
           type="button"
-          onClick={onSend}
+          onClick={() => onSend()}
           disabled={isLoading || isEmpty}
           className="absolute bottom-4 right-3 flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
         >

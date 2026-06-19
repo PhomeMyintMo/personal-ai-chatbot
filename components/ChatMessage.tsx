@@ -14,7 +14,7 @@ export default function Message({ message }: MessageProps) {
     <div className={`flex flex-col ${isUser ? "items-end" : "items-start"}`}>
       {!isUser && <AssistantProfile createdAt={message.createdAt} />}
 
-      <div className={`max-w-[75%] rounded-2xl px-4 py-3 ${isUser
+      <div className={`max-w-[75%] rounded-2xl px-4 py-3 mb-2 ${isUser
         ? "bg-blue-600 text-white"
         : message.isError ?
         "bg-red-100/10 text-red-500 "
