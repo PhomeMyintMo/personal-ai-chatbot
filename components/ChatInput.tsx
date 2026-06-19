@@ -23,7 +23,7 @@ export default function ChatInput({
   const isEmpty = value.trim().length === 0;
 
   return (
-    <div className="border-t  p-4">
+    <div className="border-t p-4">
       <div className="relative">
         <textarea
           rows={2}
